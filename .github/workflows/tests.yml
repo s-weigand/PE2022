@@ -83,6 +83,7 @@ jobs:
         run: |
           pip install wheel
           pip install -r .github/test-requirements.txt
+          pip install git+https://github.com/s-weigand/pyglotaran-extras.git@plot-dispersion
       - name: Testing ${{ matrix.notebook_path.name }}
         run: python -m pytest --nbval-lax ${{ matrix.notebook_path.path }}
       - name: Installed packages
